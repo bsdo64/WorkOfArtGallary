@@ -1,0 +1,72 @@
+extends layout
+
+block content
+        .wrapper.asidebg
+            .primary.portfolio.insidecategory
+                .container.box.portfolio-wrapper
+                    .light-wrapper
+                        .pull-left
+                            h1.page-title 작품 / 갤러리
+                            p(style='clear: both;')
+                                | 작가가 직접 그린
+                                strong 작품 / 갤러리
+                                | 를 감상하세요!
+                        .portfolio-filter.btn-group.pull-right
+                            button.btn.inverse.dropdown-toggle.bm0(data-toggle='dropdown') Filter
+                            //
+                               /.btn
+                            ul.dropdown-menu.filter
+                                li
+                                    a.active(href='#', data-filter='*') All
+                                li
+                                    a(href='#', data-filter='.editorspick') Only the best
+                            //
+                               /.filter .dropdown-menu
+                        //
+                           /.portfolio-filter
+                        .clearfix
+
+
+                        ul.items
+                            -var ob = JSON.parse(data)
+                            -each member in ob
+                                if member.pick
+                                    li.item.editorspick
+                                        .hoverpicture
+                                            .overlay
+                                                .info
+                                                    h3
+                                                        a(href='/piece/#{member.id}', title='#{member.name}') #{member.name}
+                                                .overlay-buttons
+                                                    a.btn.btn-orange.withicon(href='/piece/#{member.id}', title='#{member.name}')
+                                                        i.icon-search
+                                                        | More Details
+                                            img(src='/uploads/design/#{member.imgname}.jpg', alt='#{member.name}')
+                                            span.item-small-title #{member.name}
+                                            time(datetime='2014-06-01T22:28:00+02:00')
+                                else
+                                    li.item
+                                        .hoverpicture
+                                            .overlay
+                                                .info
+                                                    h3
+                                                        a(href='/piece/#{member.id}', title='#{member.name}') #{member.name}
+                                                .overlay-buttons
+                                                    a.btn.btn-orange.withicon(href='/piece/#{member.id}', title='#{member.name}')
+                                                        i.icon-search
+                                                        | More Details
+                                            img(src='/uploads/design/#{member.imgname}.jpg', alt='#{member.name}')
+                                            span.item-small-title #{member.name}
+                                            time(datetime='2014-06-01T22:28:00+02:00')
+                        //
+                          /.items
+                    //
+                       wrapper
+                    br
+                    br
+                //
+                   /.container
+            //
+               /.light-wrapper
+        include footer
+

@@ -1,0 +1,76 @@
+extends layout
+
+block content
+    -var ob = JSON.parse(data)
+    -var ob2 = JSON.parse(data2)
+    -var ob3 = JSON.parse(data3)
+    .wrapper.asidebg
+        #fb-root
+        .primary.portfolio
+            .container.box
+                .light-wrapper
+                    a.btn.pull-right.rm0.nav-next-item(href='/piece/#{ob3.id}', title='#{ob3.piece_name}')
+                        i.icon-right-open-1
+                    //
+                       /.btn
+                    a.btn.pull-right.nav-prev-item(href='/piece/#{ob2.id}', title='#{ob2.piece_name}')
+                        i.icon-left-open-1
+                    //
+                       /.btn
+                    .preview-header
+                        h1 #{ob.piece_name}
+                        p #{ob.comment}
+                    .preview-image
+                        img#single-screenshot(src='/uploads/design/#{ob.img_name}.jpg', alt='#{ob.piece_name}')
+                    .preview-infos
+                        ul.nobullets.item-details
+                            li
+                                .list
+                                    span 작가명:
+                                    a #{ob.writer}
+                            li
+                                .list
+                                    span 작품명:
+                                    a #{ob.piece_name}
+                            li
+                                .list
+                                    span 크기:
+                                    a #{ob.size}
+                            li
+                                .list
+                                    span 가격:
+                                    a #{ob.price}
+                            br
+                            li
+                                .list
+                                    span 년도:
+                                    a #{ob.date}
+                            li
+                                .list
+                                    span 설명:
+                                    a #{ob.comment}
+                            br
+                            li
+                                .list
+                                    span 연락처:
+                                    a #{ob.address}
+                            br
+                    br(style='clear: both;')
+                //
+                   wrapper
+                br
+                br
+            //
+               /.container
+        //
+           /.light-wrapper
+
+    include footer
+        //
+          /.social
+    //
+      /.container
+//
+  /footer
+
+//

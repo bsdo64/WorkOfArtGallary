@@ -1,0 +1,75 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        link(rel='stylesheet', type='text/css', href='/assets/pager.css')
+        script(type='text/javascript', src='/style/js/datetime.js')
+        title Uni Art
+        meta(name='title', content='Best Magazine / Blog websites | Web Design Inspirations')
+        meta(name='description', content='Find the best Magazine / Blog web designs. Webdesign-Inspiration.com is an inspiration gallery for web designers.')
+        meta(name='author', content='Web design Inspiration team')
+        meta(name='Copyright', content='Copyright Web Design Inspiration')
+        meta(name='msvalidate.01', content='F1A53F655E6C53DE169E188CF89A9BBE')
+        link(rel='shortcut icon', href='/favicon.ico')
+        link(rel='alternate', type='application/rss+xml', title='Web Design Inspiration RSS Feed', href='http://feeds.feedburner.com/wdinspi')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        link(href='/style/css/bootstrap.css', rel='stylesheet')
+        link(href='/style/type/fontello.css', rel='stylesheet')
+        link(href='/style/css/settings.css', rel='stylesheet')
+        link(href='/style/js/google-code-prettify/prettify.css', rel='stylesheet')
+        link(href='/style.css', rel='stylesheet')
+        link(href='/style/css/color/yellow.css', rel='stylesheet')
+        link(href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic', rel='stylesheet', type='text/css')
+        //if IE 8
+          link(rel='stylesheet', type='text/css', href='style/css/ie8.css', media='all')
+        //if lt IE 9
+          script(src='style/js/html5shiv.js')
+        script(src='/style/js/jquery.js')
+        script(src='/style/js/bootstrap.min.js')
+        script(src='/style/js/ddsmoothmenu.js')
+        script(src='/style/js/jquery.themepunch.plugins.min.js')
+        script(src='/style/js/jquery.themepunch.revolution.min.js')
+        script(src='/style/js/selectnav.js')
+        script(src='/style/js/jquery.fitvids.js')
+        script(src='/style/js/jquery.slickforms.js')
+        script(src='/style/js/jquery.isotope.min.js')
+        script(src='/style/js/view.min.js?auto')
+        script(src='/style/js/google-code-prettify/prettify.js')
+        script(src='/style/js/scripts.js')
+    body#body-home
+        .body-wrapper
+            .headermini
+                .container.box
+                    span.headermini-title Best design inspiration gallery
+                    ul
+                        -if(cookie)
+                            li
+                                a(href='/submit') Submit a Gallary
+                            li
+                                a(style='border-right: none; padding-right: 0;', href='/logout') LogOut
+                        -else
+                            li
+                                a(href='/signin') Sign-in
+                            li
+                                a(style='border-right: none; padding-right: 0;', href='/login') Login
+
+            header.header.default
+                .container.box
+                    .logo
+                        a(href='/', title='Best Web Designs')
+                            img(src='/style/images/best-web-design-inspiration.png', alt='Web Design Inspiration: Best web designs')
+                    nav#menu.menu
+                        ul#tiny
+                            li.active
+                                a(href='/', title='Best Web Designs') Home
+                            li
+                                a(href='/uniart') Uni Art
+
+                    //
+                       /.menu
+                //
+                   /.container
+            //
+              /header
+            .top-space
+            block content

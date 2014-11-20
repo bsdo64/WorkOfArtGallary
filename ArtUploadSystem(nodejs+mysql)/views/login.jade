@@ -1,0 +1,31 @@
+//
+   Created by bsdo64 on 2014-06-09.
+extends layout
+block content
+    .wrapper.asidebg
+    .primary.portfolio
+        .container.box
+            .light-wrapper
+                h1 로그인 하기
+                form#design-form.classic-form(action='/login', method='post')
+                    p
+                    p
+                    .submitform-aboutyou
+                        p.submitform-firstname
+                            label(for='DesignPublisher_first_name') Name
+                            input#DesignPublisher_first_name.input-large(size='15', name='id', type='text', maxlength='65')
+                        p.submitform-email
+                            label(for='DesignPublisher_email') Password
+                            input#DesignPublisher_email.input-large(size='20', name='pw', type='password', maxlength='100')
+                    br
+                    input.btn.btn-yellow.bigbtn(type='submit', name='login', value='로그인')
+                br(style='clear: both;')
+            //
+               wrapper
+            br
+            br
+        //
+           /.container
+        //
+           /.light-wrapper
+    include footer

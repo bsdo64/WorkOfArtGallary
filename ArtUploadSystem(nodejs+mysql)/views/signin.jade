@@ -1,0 +1,36 @@
+//
+   Created by bsdo64 on 2014-06-09.
+extends layout
+block content
+    .wrapper.asidebg
+    .primary.portfolio
+        .container.box
+            .light-wrapper
+                h1 Uni Art에 가입하세요!
+                p
+                    | 누구나 가입할 수 있고 누구나 작품을 업로드 할 수 있습니다.
+                    br
+                    | 아래 양식을 입력하고 바로 가입하세요!
+                form#design-form.classic-form(action='/signin', method='post')
+                    h2 About you
+                    p
+                    p
+                    .submitform-aboutyou
+                        p.submitform-firstname
+                            label(for='DesignPublisher_first_name') Name
+                            input#DesignPublisher_first_name.input-large(size='15', name='id', type='text', maxlength='65')
+                        p.submitform-email
+                            label(for='DesignPublisher_email') Password
+                            input#DesignPublisher_email.input-large(size='20', name='pw', type='password', maxlength='100')
+                    br
+                    input.btn.btn-yellow.bigbtn(type='submit', name='signin', value='회원가입')
+                br(style='clear: both;')
+            //
+               wrapper
+            br
+            br
+        //
+           /.container
+        //
+           /.light-wrapper
+    include footer
